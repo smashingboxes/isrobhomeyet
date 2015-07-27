@@ -1,0 +1,9 @@
+{
+  "name": "isrobhomeyet",
+  "version": "0.0.0",
+  "dependencies": {
+    "underscore": "*",
+    "jquery": "*"
+    },
+  "devDependencies": {  }
+}
