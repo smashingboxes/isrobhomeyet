@@ -10,6 +10,15 @@ var gulp        = require('gulp'),
     ghPages     = require('gulp-gh-pages'),
     file        = require('gulp-file'),
     coffeeify   = require('coffeeify');
+    sass        = require('gulp-sass');
+
+gulp.task('sass', function () {
+  gulp.src('src/stylesheets/*.sass')
+    .pipe(sass({
+      includePaths: ['src/bower_components']
+     }).on('error', sass.logError))
+    .pipe(gulp.dest('dist/stylesheets/'));
+});
 
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
@@ -26,17 +35,6 @@ gulp.task('browser-sync', function() {
     }
   });
 });
-
-gulp.task('compass', function() {
-  return gulp.src('./src/stylesheets/**/*.{scss,sass}')
-    .pipe($.plumber())
-    .pipe($.compass({
-      css: 'dist/stylesheets',
-      sass: 'src/stylesheets'
-    }))
-    .pipe(gulp.dest('dist/stylesheets'));
-});
-
 
 gulp.task('js', function() {
   return gulp.src('src/scripts/*.coffee')
@@ -83,10 +81,10 @@ gulp.task('templates', function() {
 
 
 
-gulp.task('build', ['compass', 'js', 'templates', 'images']);
+gulp.task('build', ['js', 'templates', 'images', 'sass']);
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
-  gulp.watch('src/stylesheets/**/*.{scss,sass}',['compass', reload]);
+  gulp.watch('src/stylesheets/**/*.{scss,sass}',['sass', reload]);
   gulp.watch('src/scripts/**/*.coffee',['js', reload]);
   gulp.watch('src/images/**/*',['images', reload]);
   gulp.watch('src/*.jade',['templates', reload]);

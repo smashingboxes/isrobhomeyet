@@ -7,7 +7,22 @@ html.no-js
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel="stylesheet", href="stylesheets/main.css")
-    script(src="scripts/app.js")
   body
-    h1 Is Rob Home?
-    h2 No
+    header
+      .is_rob_home
+        .question
+          h1 IS ROB HOME YET?
+        .answer
+          img(src="/images/no.png")
+    section#main
+      .countdown
+        h1 COUNTDOWN TO ROB
+        .flipclock
+      .robfact
+        .well
+          .body
+            .hashtag
+              img(src="/images/robfact.png")
+            .fact
+              p
+    script(src="scripts/app.js")

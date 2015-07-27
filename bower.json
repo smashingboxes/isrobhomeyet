@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "dependencies": {
     "underscore": "*",
-    "jquery": "*"
-    },
-  "devDependencies": {  }
+    "jquery": "*",
+    "FlipClock": "~0.7.7",
+    "flipclock": "~0.7.7"
+  },
+  "devDependencies": {}
 }
