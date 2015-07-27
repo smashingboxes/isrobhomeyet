@@ -9,3 +9,9 @@ npm install
 bower install
 gulp serve
 ```
+
+##Deploy
+
+```
+gulp deploy
+```
