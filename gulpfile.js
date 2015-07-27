@@ -6,11 +6,14 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload,
     browserify  = require('browserify'),
     del         = require('del'),
-    argv        = require('yargs').argv;
-    ghPages     = require('gulp-gh-pages');
+    argv        = require('yargs').argv,
+    ghPages     = require('gulp-gh-pages'),
+    file        = require('gulp-file'),
+    coffeeify   = require('coffeeify');
 
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
+    .pipe(file('CNAME', 'www.isrobhomeyet.com'))
     .pipe(ghPages());
 });
 
@@ -36,11 +39,11 @@ gulp.task('compass', function() {
 
 
 gulp.task('js', function() {
-  return gulp.src('src/scripts/*.js')
+  return gulp.src('src/scripts/*.coffee')
     .pipe($.plumber())
     .pipe(through2.obj(function (file, enc, next) {
       browserify(file.path, { debug: true })
-        .transform(require('babelify'))
+        .transform(require('coffeeify'))
         .transform(require('debowerify'))
         .bundle(function (err, res) {
           if (err) { return next(err); }
@@ -84,7 +87,7 @@ gulp.task('build', ['compass', 'js', 'templates', 'images']);
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
   gulp.watch('src/stylesheets/**/*.{scss,sass}',['compass', reload]);
-  gulp.watch('src/scripts/**/*.js',['js', reload]);
+  gulp.watch('src/scripts/**/*.coffee',['js', reload]);
   gulp.watch('src/images/**/*',['images', reload]);
   gulp.watch('src/*.jade',['templates', reload]);
 });
