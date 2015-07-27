@@ -413,8 +413,14 @@ body {
 h1 {
   letter-spacing: 8px; }
 
+h2 {
+  letter-spacing: 4px; }
+
+a {
+  color: white;
+  text-decoration: none; }
+
 .is_rob_home {
-  margin-top: 100px;
   margin-bottom: 100px;
   text-align: center; }
   .is_rob_home .question {
@@ -442,3 +448,22 @@ h1 {
 
 .robfact .hashtag {
   margin-bottom: 30px; }
+
+.another-robfact {
+  text-align: center;
+  color: #eb1767;
+  cursor: pointer; }
+
+footer {
+  border-top: solid #211f20 1px;
+  padding: 30px 0px;
+  margin: 0 auto;
+  width: 620px; }
+  footer .sb {
+    float: right;
+    display: inline;
+    letter-spacing: 2px; }
+    footer .sb .smashing {
+      color: #C7C4C4; }
+    footer .sb .boxes {
+      font-weight: bold; }
