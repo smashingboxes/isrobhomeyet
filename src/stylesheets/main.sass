@@ -2,6 +2,8 @@
 @import 'flipclock/compiled/flipclock'
 
 $width: 620px
+$smashing-pink: #eb1767
+$dark-black: #211f20
 
 body
   background-color: #282828
@@ -10,9 +12,13 @@ body
 
 h1
   letter-spacing: 8px
+h2
+  letter-spacing: 4px
+a
+  color: white
+  text-decoration: none
 
 .is_rob_home
-  margin-top: 100px
   margin-bottom: 100px
   text-align: center
   .question
@@ -34,8 +40,27 @@ h1
 
 .robfact
   .well
-    background-color: #211f20
+    background-color: $dark-black
   .body
     padding: 50px
   .hashtag
     margin-bottom: 30px
+
+.another-robfact
+  text-align: center
+  color: $smashing-pink
+  cursor: pointer
+
+footer
+  border-top: solid $dark-black 1px
+  padding: 30px 0px
+  margin: 0 auto
+  width: $width
+  .sb
+    float: right
+    display: inline
+    letter-spacing: 2px
+    .smashing
+      color: #C7C4C4 
+    .boxes
+      font-weight: bold

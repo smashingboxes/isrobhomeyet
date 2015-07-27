@@ -5,6 +5,35 @@ FlipClock = require("flipclock")
 
 
 class RobCountdown
+
+  date_rob_arrives: (new Date(2015, 8, 8, 9, 0, 0, 0))
+
+  start: ->
+    @isHeBack()
+    @countdown()
+    @robfact()
+    $('.another-robfact').click( =>
+      @robfact()
+    )
+
+  isHeBack: ->
+    if Date.now == @date_rob_arrives
+      $('.answer').html("<img src='/images/yes.png'/>")
+    else
+      $('.answer').html("<img src='/images/no.png'/>")
+
+  countdown: ->
+    our_date = Date.now()
+    time_till_rob = (@date_rob_arrives.getTime() - our_date) / 1000
+
+    clock = $('.flipclock').FlipClock( time_till_rob,
+      clockFace: "DailyCounter"
+      countdown: true
+    )
+
+  robfact: ->
+    $('.robfact .fact > p').html(_.sample(@robfacts))
+
   robfacts:
     [
       "He is coming home",
@@ -38,24 +67,6 @@ class RobCountdown
       "His family crest is a picture of a barracuda eating Neil Armstrong.",
       "He is a wizard of average height"
     ]
-
-  start: ->
-    @countdown()
-    @robfact()
-
-  countdown: ->
-    date_rob_arrives = (new Date(2015, 8, 8, 9, 0, 0, 0)).getTime()
-    our_date = Date.now()
-    time_till_rob = (date_rob_arrives - our_date) / 1000
-
-    clock = $('.flipclock').FlipClock( time_till_rob,
-      clockFace: "DailyCounter"
-      countdown: true
-    )
-
-  robfact: ->
-    $('.robfact .fact > p').html(_.sample(@robfacts))
-
 
 countdown = new RobCountdown
 countdown.start()
