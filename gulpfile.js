@@ -13,7 +13,7 @@ var gulp        = require('gulp'),
     sass        = require('gulp-sass');
 
 gulp.task('sass', function () {
-  gulp.src('src/stylesheets/*.sass')
+  gulp.src('src/stylesheets/*.{scss,sass}')
     .pipe(sass({
       includePaths: ['src/bower_components']
      }).on('error', sass.logError))

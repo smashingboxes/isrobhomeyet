@@ -1,0 +1,146 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
+@import "flipclock/compiled/flipclock";
+
+$width: 620px;
+$smashing-pink: #eb1767;
+$dark-black: #211f20;
+
+body {
+  background-color: #282828;
+  color: white;
+  font-family: "Montserrat" sans-serif;
+}
+
+h1 {
+  letter-spacing: 8px;
+}
+
+h2 {
+  letter-spacing: 4px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.is_rob_home {
+  margin-bottom: 100px;
+  text-align: center;
+  .question {
+    margin-bottom: 100px;
+  }
+}
+
+#main {
+  margin: 0px auto;
+  width: $width;
+}
+
+.countdown {
+  text-align: center;
+  .flipclock, .flip-clock-wrapper {
+    margin: 0px;
+    display: inline-block;
+    width: auto;
+    margin-bottom: 20px;
+  }
+  .flip-clock-label {
+    display: none;
+  }
+}
+
+.robfact {
+  font-family: "Roboto" sans-serif;
+  .well {
+    background-color: $dark-black;
+  }
+  .body {
+    padding: 50px;
+  }
+  .hashtag {
+    margin-bottom: 30px;
+  }
+}
+
+.another-robfact {
+  text-align: center;
+  color: $smashing-pink;
+  cursor: pointer;
+}
+
+footer {
+  border-top: solid $dark-black 1px;
+  padding: 30px 0px;
+  margin: 0 auto;
+  .sb {
+    float: right;
+    display: inline;
+    letter-spacing: 2px;
+    .smashing {
+      color: #c7c4c4;
+    }
+    .boxes {
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main{ width: 100%; }
+  h1 { letter-spacing: 3px; }
+
+  .is_rob_home {
+    margin-bottom: 50px;
+    font-size: 12px;
+    .question {
+      margin-bottom: 50px;
+    }
+    .answer img{
+      width: 200px
+    }
+  }
+
+  .countdown{
+    h1 {
+      font-size: 21px
+    }
+  }
+
+  .robfact {
+    .body {
+      padding: 25px;
+    }
+  }
+
+  //Digits
+  .flip-clock-wrapper ul {
+    height: 30px;
+    width: 20px;
+    padding: 0 5px;
+  }
+
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  //Dividers
+  .flip-clock-divider {
+    height: 40px;
+  }
+  .flip-clock-dot {
+    height: 6px;
+    width: 6px;
+    left: 7px;
+  }
+  .flip-clock-dot.top {
+    top: 10px;
+  }
+  .flip-clock-dot.bottom {
+    bottom: 8px;
+  }
+}
