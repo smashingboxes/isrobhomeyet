@@ -24,7 +24,7 @@ class RobCountdown
 
   countdown: ->
     our_date = Date.now()
-    time_till_rob = (@date_rob_arrives.getTime() - our_date) / 1000
+    time_till_rob = (@date_rob_arrives - our_date) / 1000
 
     clock = $('.flipclock').FlipClock( time_till_rob,
       clockFace: "DailyCounter"
