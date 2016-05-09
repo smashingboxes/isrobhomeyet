@@ -409,7 +409,7 @@
 body {
   background-color: #282828;
   color: white;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Montserrat" sans-serif; }
 
 h1 {
   letter-spacing: 8px; }
@@ -442,7 +442,7 @@ a {
     display: none; }
 
 .robfact {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto" sans-serif; }
   .robfact .well {
     background-color: #211f20; }
   .robfact .body {
