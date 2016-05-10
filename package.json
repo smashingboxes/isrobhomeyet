@@ -26,5 +26,7 @@
     "through2": "^0.6.5",
     "yargs": "^3.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "wordwrap": "^1.0.0"
+  }
 }
