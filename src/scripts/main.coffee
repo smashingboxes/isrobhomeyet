@@ -6,7 +6,7 @@ FlipClock = require("flipclock")
 
 class RobCountdown
 
-  date_rob_arrives: Date.now
+  date_rob_arrives: new Date(2016, 5, 13, 9, 0, 0, 0)
 
   start: ->
     @isHeBack()
